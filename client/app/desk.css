@@ -1,0 +1,520 @@
+.page-block {
+  padding-block: 30px 48px;
+  min-height: 50vh;
+}
+.page-intro {
+  padding-block: 40px 28px;
+}
+.page-intro > p:not(.eyebrow),
+.auth-body > p:not(.eyebrow) {
+  margin-top: 12px;
+}
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.84rem;
+  font-weight: 680;
+}
+input,
+select,
+textarea {
+  width: 100%;
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background: var(--panel);
+  padding: 10px 11px;
+  color: var(--ink);
+  font-size: 0.94rem;
+  line-height: 1.48;
+}
+textarea {
+  resize: vertical;
+}
+input[readonly] {
+  background: var(--muted-panel);
+  color: var(--muted);
+}
+.state {
+  text-align: center;
+  margin: 28px auto;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  padding: 40px 18px;
+  max-width: 1200px;
+}
+.state .eyebrow {
+  justify-content: center;
+}
+.state h2 {
+  font-size: clamp(24px, 3vw, 38px);
+}
+.state p,
+.state .btn {
+  margin-top: 10px;
+}
+.loader {
+  display: inline-flex;
+  animation: spin 2s linear infinite;
+  color: var(--action);
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.booking-panel,
+.surface,
+.auth-body {
+  padding: clamp(19px, 2.6vw, 39px);
+  border: 1px solid var(--line);
+  background: var(--panel);
+  border-radius: 4px;
+}
+.booking-panel {
+  position: sticky;
+  top: 88px;
+  border-top: 3px solid var(--action);
+  box-shadow: 0 8px 24px #11111108;
+}
+.booking-panel > .eyebrow:first-child {
+  color: var(--action);
+}
+.big-rate {
+  font: 650 3.15rem/1.15 var(--sans);
+  letter-spacing: -0.075em;
+  color: var(--ink);
+  margin: 4px 0;
+}
+.big-rate small {
+  letter-spacing: 0;
+  font-weight: 500;
+}
+.booking-panel > p:not(.big-rate, .eyebrow) {
+  font-size: 0.83rem;
+}
+.booking-panel hr {
+  border: 0;
+  border-top: 1px solid var(--line);
+  margin: 17px 0;
+}
+.booking-panel .top-gap {
+  margin-top: 15px;
+  margin-bottom: 7px;
+}
+.hours-available {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+.hours-available span {
+  font-size: 0.65rem;
+  letter-spacing: 0.01em;
+  background: var(--muted-panel);
+  padding: 3px 6px;
+  border-radius: 2px;
+}
+.hours-available p {
+  font-size: 0.8rem;
+}
+.micro {
+  margin: 10px 0;
+}
+.booking-panel > .btn {
+  margin-top: 8px;
+}
+.form-stack {
+  display: grid;
+  gap: 15px;
+}
+.fields-two {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  background: #11131b94;
+  backdrop-filter: blur(4px);
+}
+.dialog {
+  position: fixed;
+  z-index: 41;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(465px, calc(100% - 28px));
+  max-height: 90dvh;
+  overflow: auto;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--action);
+  border-radius: 5px;
+  box-shadow: 0 22px 80px #0003;
+  padding: 27px;
+}
+.dialog h2 {
+  font-size: 2.05rem;
+  padding-right: 20px;
+}
+.dialog > p:not(.eyebrow) {
+  margin: 7px 0 15px;
+  font-size: 0.88rem;
+}
+.dialog .close {
+  position: absolute;
+  right: 13px;
+  top: 13px;
+  width: 29px;
+  height: 29px;
+}
+.dialog-actions {
+  justify-content: flex-end;
+  margin-top: 18px;
+}
+.gallery-dialog {
+  width: min(900px, calc(100% - 28px));
+}
+.estimate {
+  padding: 13px;
+  background: var(--muted-panel);
+  border-radius: 3px;
+}
+.estimate p {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin: 4px 0;
+  font-size: 0.81rem;
+}
+.estimate p:last-child {
+  border-top: 1px solid var(--line);
+  margin-top: 10px;
+  padding-top: 9px;
+  color: var(--ink);
+}
+.auth-page {
+  max-width: 1060px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-block: 40px;
+}
+.auth-photo {
+  position: relative;
+  min-height: 400px;
+  background: #1b1b1d;
+  overflow: hidden;
+  border-radius: 4px 0 0 4px;
+}
+.auth-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, #101114b5, transparent 55%);
+}
+.auth-photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.auth-caption {
+  position: absolute;
+  bottom: 21px;
+  left: 23px;
+  right: 16px;
+  z-index: 1;
+  color: white;
+}
+.auth-caption span,
+.auth-caption strong {
+  display: block;
+}
+.auth-caption strong {
+  font-size: clamp(1.3rem, 2.5vw, 2.4rem);
+  font-weight: 640;
+  letter-spacing: -0.06em;
+}
+.auth-body {
+  border-radius: 0 4px 4px 0;
+  padding: clamp(24px, 4vw, 52px);
+}
+.auth-body h1 {
+  font-size: clamp(33px, 3.5vw, 58px);
+}
+.auth-body form {
+  margin-top: 23px;
+}
+.password input {
+  padding-right: 42px;
+}
+.password button {
+  position: absolute;
+  right: 12px;
+  display: grid;
+}
+.or {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--muted);
+  font-size: 0.78rem;
+  margin: 14px 0;
+}
+.or::before,
+.or::after {
+  content: "";
+  height: 1px;
+  background: var(--line);
+  flex: 1;
+}
+.google-g {
+  font-size: 1.12rem;
+  color: var(--action);
+}
+.swap {
+  text-align: center;
+  font-size: 0.83rem;
+}
+.swap a,
+.link-btn {
+  color: var(--action);
+  font-weight: 720;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.align-left {
+  justify-self: start;
+}
+.form-error {
+  color: var(--danger);
+  font-size: 0.83rem;
+}
+.form-page {
+  max-width: 800px;
+  margin-bottom: 45px;
+}
+fieldset {
+  padding: 15px;
+  margin: 0;
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+}
+legend {
+  padding-inline: 6px;
+  font-weight: 720;
+}
+legend svg {
+  vertical-align: middle;
+}
+.upload {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 12px;
+  background: var(--muted-panel);
+  padding: 8px 10px;
+  border-radius: 3px;
+}
+.upload input {
+  font-size: 0.79rem;
+  background: transparent;
+  border: 0;
+  padding: 4px;
+}
+.records {
+  display: grid;
+  margin-block: 18px;
+}
+.record {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  border-top: 1px solid var(--line);
+  padding: 15px 0;
+}
+.record > img {
+  width: 112px;
+  aspect-ratio: 1.4;
+  object-fit: cover;
+  border-radius: 2px;
+}
+.record h3 {
+  font-size: 1.4rem;
+  margin: 4px 0;
+}
+.record .eyebrow {
+  margin: 0;
+  font-size: 0.62rem;
+}
+.record p {
+  font-size: 0.81rem;
+}
+.actions {
+  margin-left: auto;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+.status {
+  font: 700 0.63rem var(--mono);
+  letter-spacing: 0.04em;
+  padding: 5px 8px;
+  border-radius: 20px;
+  color: var(--ink);
+}
+.pending {
+  background: #ffeabc;
+  color: #68470b;
+}
+.confirmed {
+  background: #dceee1;
+  color: #194e36;
+}
+.completed {
+  background: #e1e5ff;
+  color: #283c90;
+}
+.cancelled {
+  background: #f1e0dc;
+  color: #722f27;
+}
+.desk-intro {
+  border-bottom: 1px solid var(--line);
+}
+.desk-links {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 13px;
+  margin: 20px 0 39px;
+}
+.desk-links a {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  font-size: 0.9rem;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  padding: 18px;
+  border-radius: 3px;
+}
+.desk-links a > svg:first-child {
+  color: var(--action);
+}
+.desk-links a > svg:last-child {
+  margin-left: auto;
+}
+.desk-links a:hover {
+  border-color: var(--action);
+}
+.editorial {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: clamp(28px, 6vw, 96px);
+  padding-block: 55px;
+}
+.editorial img {
+  height: clamp(300px, 33vw, 510px);
+  object-fit: cover;
+  width: 100%;
+  border-radius: 3px;
+}
+.editorial p:not(.eyebrow),
+.editorial .btn {
+  margin-top: 18px;
+}
+.prose {
+  max-width: 800px;
+}
+.prose h2 {
+  margin: 26px 0 8px;
+  font-size: 1.65rem;
+}
+.missing {
+  text-align: center;
+  padding-block: 58px;
+}
+.missing svg {
+  width: min(100%, 360px);
+  margin-bottom: 20px;
+}
+.missing .eyebrow {
+  justify-content: center;
+}
+.missing > p:not(.eyebrow),
+.missing .btn {
+  margin-top: 14px;
+}
+@media (max-width: 740px) {
+  .page-intro {
+    padding: 27px 0 19px;
+  }
+  .auth-page,
+  .editorial {
+    grid-template-columns: 1fr;
+  }
+  .auth-photo {
+    min-height: 140px;
+    max-height: 140px;
+    border-radius: 4px 4px 0 0;
+  }
+  .auth-body {
+    border-radius: 0 0 4px 4px;
+  }
+  .auth-caption {
+    bottom: 12px;
+    left: 18px;
+  }
+  .auth-page {
+    margin-block: 22px;
+  }
+  .desk-links {
+    gap: 7px;
+  }
+  .desk-links a {
+    flex-wrap: wrap;
+    gap: 5px;
+    padding: 12px;
+    font-size: 0.79rem;
+  }
+  .record {
+    flex-wrap: wrap;
+  }
+  .record .actions {
+    margin-left: 0;
+  }
+}
+@media (max-width: 480px) {
+  .desk-links {
+    grid-template-columns: 1fr;
+  }
+  .record > img {
+    width: 73px;
+  }
+  .record h3 {
+    font-size: 1.14rem;
+  }
+  .fields-two {
+    gap: 9px;
+  }
+  .dialog {
+    padding: 19px;
+  }
+  .surface {
+    padding: 17px;
+  }
+  .editorial {
+    padding-block: 30px;
+  }
+  .editorial img {
+    height: 240px;
+  }
+}
